@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: var(--transition);
+}
+
+:root {
+    --primary: #6C63ff;
+    --secondary: #4a44c6;
+    --accent: #ff6584;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+
+    /* Light Mode colors */
+
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #343a40;
+    --text-secondary: #6c757d;
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --body-bg: linear-gradient(135deg, #667Eea 0%, #764ba2 100%);
+
+}
+
+body {
+    background: var(--body-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-block: 140px;
+
+}
+
+.container {
+    width: clamp(320px, 780px, 1024px);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contain-top::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 110px;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.236);
+    border-radius: 50%;
+
+}
+
+.change-mode {
+    background: rgba(255, 255, 255, 0.119);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    
+}
+
+.change-mode:hover {
+    transform: rotate(10deg);
+}
+
+.fa-solid {
+    font-size: 25px;
+    transform: rotate(25deg);
+}
+
+.fa-sun {
+    display: none;
+}
+
+.contain-top {
+    background-color: var(--primary);
+    padding: 20px;
+    color: var(--bg-secondary);
+    position: relative;
+}
+
+#title {
+    margin: 20px;
+    text-align: center;
+
+}
+
+.comptage {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.comptage p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comptage p span:first-child {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.comptage p span:last-child {
+    font-size: 14px;
+}
+
+.contain-bottom {
+    padding: 20px;
+    background: var(--bg-primary);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.top input {
+    background: var(--bg-secondary);
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    width: 70%;
+}
+
+.top select {
+    background: var(--bg-secondary);
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    width: 100px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--secondary);
+    color: var(--bg-secondary);
+    width: 100px;
+    cursor: pointer;
+}
+
+.midle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.filtre {
+    display: flex;
+    gap: 10px;
+}
+
+.filtre div {
+    background: var(--bg-secondary);
+    padding: 5px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search input {
+    border: none;
+    background: var(--bg-secondary);
+}
+
+.search {
+    background: var(--bg-secondary);
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.fa-search {
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.search input:focus {
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width: 570px) {
+    .midle {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search {
+        width: 300px;
+    }
+
+}
+
+.no-task {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.fa-clipboard-list {
+    font-size: 60px;
+    color: var(--text-secondary);
+    align-self: center;
+    justify-self: center;
+    display: flex;
+}
+
+.no-task p {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+   /* NOTIFICATIONS POPUP */
+
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    animation: slideIn 0.4s ease, fadeOut 0.4s ease 2.6s forwards;
+    box-shadow: var(--shadow);
+    min-width: 220px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification.success {
+    background: #28a745;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+.notification.warning {
+    background: #ffc107;
+    color: black;
+}
+
+.notification.info {
+    background: var(--primary);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+body.dark {
+    --bg-secondary: #1e1e1e;
+    --bg-primary: #2a2a2a;
+    --text-primary: #f1f1f1;
+    --text-secondary: #cfcfcf;
+    --border-color: #444;
+    --body-bg: #34465A
+}
+
+
+body.dark .contain-top {
+    color: var(--text-primary);
+}
+
+body.dark .contain-bottom {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+body.dark .top input,
+body.dark .top select,
+body.dark .search,
+body.dark .search,
+body.dark .search input {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark .filtre div {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark .task {
+    background: var(--bg-secondary);
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark button {
+    background: var(--primary);
+    color: white;
+}
+
+body.dark .no-task p,
+body.dark .no-task h2,
+body.dark .fa-clipboard-list {
+    color: var(--text-secondary);
+}

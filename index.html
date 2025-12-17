@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="contain-top">
+                <header>
+                    <h1>Todo List</h1>
+                    <div class="change-mode">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+                </header>
+                <p id="title">Organisez votre vie en un seul endroit</p>
+                <div class="comptage">
+                    <p><span>0</span><span>Total</span></p>
+                    <p><span>0</span><span>Terminées</span></p>
+                    <p><span>0</span><span>En attente</span></p>
+                </div>
+            </div>
+            <div class="contain-bottom">
+                <div class="top">
+                    <input type="text" placeholder="Ajouter une nouvelle tache...">
+                    <select name="priorite" id="priorite">
+                        <option value="Moyenne">Moyenne</option>
+                        <option value="faible">faible</option>
+                        <option value="eleve">élevé</option>
+                    </select>
+                    <button>
+                        <i class="fas fa-plus"></i>
+                        <span>Ajouter</span>
+                    </button>
+                </div>
+                <div class="midle">
+                    <div class="filtre">
+                        <div>Toutes</div>
+                        <div>En attente</div>
+                        <div>Terminées</div>
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="Rechercher...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="bottom" id="task-list">
+                </div>
+
+                <div class="no-task" id="empty">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h2>Aucune tache pour le moment</h2>
+                    <p>Ajoutez votre première tache pour commencer</p>
+                </div>
+                <div id="notification-container"></div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <script src="./asset/js/app.js"></script>
+</body>
+
+</html>
